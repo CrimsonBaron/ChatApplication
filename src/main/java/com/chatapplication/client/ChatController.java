@@ -1,5 +1,6 @@
 package com.chatapplication.client;
 
+import com.chatapplication.shared.Message;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,18 +11,17 @@ import javafx.scene.control.TextField;
 
 public class ChatController {
     @FXML
-    public Button ButtonClick;
+    public Button Button;
     public javafx.scene.control.ListView ListView;
     public javafx.scene.control.TextField TextField;
     private Label welcomeText;
 
+    Message message = new Message();
 
-    protected void onHelloButtonClick() {
-
-
+    public void onButtonClick() {
+        message.setData(TextField.getAccessibleText());
     }
 
-    public void onButtonClick(ActionEvent actionEvent) {
 
-    }
+
 }

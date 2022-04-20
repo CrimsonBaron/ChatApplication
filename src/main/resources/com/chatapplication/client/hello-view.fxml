@@ -10,7 +10,7 @@
     </padding>
    <AnchorPane minHeight="400.0" minWidth="600.0">
       <children>
-          <Button fx:id="ButtonClick" layoutX="276.0" layoutY="324.0" onAction="#onButtonClick" text="SEND" />
+          <Button fx:id="Button" layoutX="276.0" layoutY="324.0" onAction="#onButtonClick" text="SEND" />
          <ListView fx:id="ListView" layoutX="36.0" layoutY="117.0" prefHeight="188.0" prefWidth="529.0" />
          <TextField fx:id="TextField" layoutX="35.0" layoutY="33.0" prefHeight="41.0" prefWidth="529.0" />
       </children>
