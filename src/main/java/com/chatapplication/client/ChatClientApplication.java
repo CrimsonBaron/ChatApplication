@@ -14,6 +14,7 @@ public class ChatClientApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Chat");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

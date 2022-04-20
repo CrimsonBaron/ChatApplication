@@ -9,6 +9,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
 public class ChatController {
     @FXML
     public Button Button;
@@ -16,12 +20,12 @@ public class ChatController {
     public javafx.scene.control.TextField TextField;
     private Label welcomeText;
 
+
     Message message = new Message();
 
     public void onButtonClick() {
         message.setData(TextField.getAccessibleText());
     }
-
 
 
 }
