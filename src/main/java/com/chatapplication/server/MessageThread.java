@@ -1,6 +1,7 @@
 package com.chatapplication.server;
 
 import com.chatapplication.shared.Message;
+import com.chatapplication.shared.MessageReader;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -14,6 +15,7 @@ public class MessageThread extends Thread {
     private Socket socket;
 
     public MessageThread( Socket socket) {
+        System.out.println("recived Socket: "+socket.toString());
         this.socket = socket;
     }
 
@@ -25,9 +27,11 @@ public class MessageThread extends Thread {
                try {
                    Message msg = MessageReader.readMessageObj(socket.getInputStream());
 
-                   for (Socket s: CLIENTS){
-                       if (!s.isClosed()) {
-                           MessageReader.writeMessageObj(msg,s.getOutputStream());
+                   if (msg != null){
+                       for (Socket s: CLIENTS){
+                           if (!s.isClosed() ) {
+                               MessageReader.writeMessageObj(msg,s.getOutputStream());
+                           }
                        }
                    }
 

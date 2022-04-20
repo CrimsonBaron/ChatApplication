@@ -1,6 +1,8 @@
 package com.chatapplication.shared;
 
-public class Message {
+import java.io.Serializable;
+
+public class Message implements Serializable {
 
     private String command;
     private String data;
@@ -22,5 +24,13 @@ public class Message {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "command='" + command + '\'' +
+                ", data='" + data + '\'' +
+                '}';
     }
 }

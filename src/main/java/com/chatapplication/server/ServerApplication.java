@@ -9,7 +9,12 @@ import java.net.Socket;
 public class ServerApplication {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         ServerSocket serverSocket = new ServerSocket(8000);
-        Socket socket = serverSocket.accept();
+
+        while (true){
+            Socket socket = serverSocket.accept();
+            MessageThread msgThread = new MessageThread(socket);
+            msgThread.start();
+        }
 
 
     }
