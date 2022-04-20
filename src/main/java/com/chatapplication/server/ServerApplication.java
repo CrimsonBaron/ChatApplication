@@ -10,7 +10,7 @@ public class ServerApplication {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         ServerSocket serverSocket = new ServerSocket(8000);
         Socket socket = serverSocket.accept();
-        Message msg = MessageReader.readMessageObj(socket.getInputStream());
+
 
     }
 }
